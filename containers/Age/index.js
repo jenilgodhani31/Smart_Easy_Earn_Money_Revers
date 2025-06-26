@@ -8,14 +8,9 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify'
 
 function Age() {
-    const [selected, setSelected] = useState(null);
     const router = useRouter()
     function handleClick() {
-        if (selected === null) {
-            toast.error("Please select Age");
-        } else {
-            router.push('/country');
-        }
+        router.push('/country');
     }
 
     return (
@@ -27,29 +22,19 @@ function Age() {
                     data-full-width-responsive="true"
                 />
             </div>
-            <div className="flex flex-col gap-5 mx-auto h-max p-4  pb-[400px]">
+            <div className="flex flex-col gap-5 mx-auto  p-4  h-screen">
                 <div className='grid grid-cols-1 gap-4 '>
                     {gameData?.Age?.map((item, index) => (
                         <div
                             key={index}
-                            onClick={() => setSelected(index)}
-                            className={`cursor-pointer text-center font-semibold text-[18px] p-4 rounded-2xl ${selected === index ? 'bg-primary1 text-white' : 'bg-primary7'
+                            onClick={handleClick}
+                            className={`cursor-pointer text-center font-semibold text-[18px] p-4 rounded-2xl bg-primary1 text-white 
                                 }`}
                         >
                             {item.name}
                         </div>
                     ))}
                 </div>
-
-
-                <button
-                    onClick={handleClick}
-                    className="flex items-center font-semibold text-[20px] justify-center w-full p-3 text-white gap-3 rounded-[15px] bg-primary1 shadow-xl/20 transition-shadow duration-300"
-                >
-                    {"NEXT"}
-                </button>
-
-
             </div>
         </Layout>
     );

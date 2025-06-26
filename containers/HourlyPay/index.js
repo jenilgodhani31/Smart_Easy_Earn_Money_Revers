@@ -7,15 +7,10 @@ import { toast } from 'react-toastify';
 
 
 function HourlyPay() {
-    const [selected, setSelected] = useState(null);
     const router = useRouter()
 
-    function handleClick() {
-        if (selected === null) {
-            toast.error("Please select Hourly Pay");
-        } else {
+    function handleClick() {     
             router.push('/emoney');
-        }
     }
     return (
         <Layout title={"Hourly Pay "} className={"text-[15px]"}>
@@ -27,14 +22,14 @@ function HourlyPay() {
                 />
             </div>
 
-            <div className="flex flex-col gap-5 mx-auto h-max p-4  pb-[400px]">
+            <div className="flex flex-col gap-5 mx-auto h-max p-4  h-screen">
 
                 <div className='grid grid-cols-1 gap-4 '>
                     {gameData?.HourlyPay?.map((item, index) => (
                         <div
                             key={index}
-                            onClick={() => setSelected(index)}
-                            className={`cursor-pointer font-semibold  text-center text-[18px] p-4 rounded-2xl ${selected === index ? 'bg-primary1 text-white' : 'bg-primary7'
+                            onClick={handleClick}
+                            className={`cursor-pointer font-semibold  text-center text-[18px] p-4 rounded-2xl bg-primary1 text-white
                                 }`}
                         >
                             {item.name}

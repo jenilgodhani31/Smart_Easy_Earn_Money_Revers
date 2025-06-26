@@ -31,7 +31,7 @@ function Gender() {
                     data-full-width-responsive="true"
                 />
             </div>
-            <div className="flex flex-col gap-5 mx-auto h-max p-4   pb-[300px]">
+            <div className="flex flex-col gap-5 mx-auto h-max p-4   h-screen">
 
                 <div className='grid grid-cols-1 gap-4 '>
                     {gameData?.Gender?.map((item, index) => (

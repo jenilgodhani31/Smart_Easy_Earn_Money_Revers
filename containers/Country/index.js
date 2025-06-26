@@ -7,19 +7,17 @@ import { toast } from 'react-toastify';
 
 
 function Country() {
-    const [selected, setSelected] = useState(null);
+
     const router = useRouter()
 
     function handleClick() {
-        if (selected === null) {
-            toast.error("Please select Country");
-        } else {
-            router.push('/currency');
-        }
+
+        router.push('/currency');
+
     }
     return (
         <Layout title={"Country"} className={"text-[15px]"}>
-             <div className="p-5 pt-[100px]">
+            <div className="p-5 pt-[100px]">
                 <Ads
                     data-ad-format="auto"
                     data-ad-slot="6816460021"
@@ -33,9 +31,9 @@ function Country() {
                     {gameData?.Country?.map((item, index) => (
                         <div
                             key={index}
-                            onClick={() => setSelected(index)}
+                            onClick={handleClick}
                             className={`flex ${item.name === "Other" ? 'justify-center' : 'items-center gap-10'
-                                } cursor-pointer font-semibold  px-10 text-center text-[18px] p-4 rounded-2xl ${selected === index ? 'bg-primary1 text-white' : 'bg-primary7'
+                                } cursor-pointer font-semibold  px-10 text-center text-[18px] p-4 rounded-2xl bg-primary1 text-white
                                 }`}
                         >
                             {/* Show image only if flag exists */}

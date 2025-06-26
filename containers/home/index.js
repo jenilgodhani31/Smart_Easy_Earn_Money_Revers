@@ -20,7 +20,7 @@ function Home() {
 
     <Fragment >
 
-      <div className="text-center bg-primary1 p-5 rounded-b-[30px] shadow-2xl ">
+      <div className="text-center bg-primary1 p-5 rounded-b-[30px]  shadow-2xl ">
         {"Smart & Easy Earn Money"}
       </div>
       <div className="p-5 pt-10">
@@ -30,7 +30,7 @@ function Home() {
           data-full-width-responsive="true"
         />
       </div>
-      <div className="flex flex-col gap-12 p-5 pt-[80px] items-center justify-center pb-[400px] text-black bg-white ">
+      <div className="flex flex-col gap-12 p-5 pt-[80px] h-screen items-center justify-center  text-black bg-white ">
         <img src="/assets/images/homePage/homePage.png"
           className="w-[100px] h-[100px]"
         />

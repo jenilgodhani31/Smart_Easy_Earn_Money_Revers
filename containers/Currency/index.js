@@ -11,15 +11,11 @@ function Currency() {
     const router = useRouter()
 
     function handleClick() {
-        if (selected === null) {
-            toast.error("Please select Currency");
-        } else {
-            router.push('/profession');
-        }
+        router.push('/profession');
     }
     return (
         <Layout title={"Currency"} className={"text-[15px]"}>
-             <div className="p-5 pt-[100px]">
+            <div className="p-5 pt-[100px]">
                 <Ads
                     data-ad-format="auto"
                     data-ad-slot="6816460021"
@@ -33,9 +29,9 @@ function Currency() {
                     {gameData?.Currency?.map((item, index) => (
                         <div
                             key={index}
-                            onClick={() => setSelected(index)}
+                            onClick={handleClick}
                             className={`flex ${item.name === "Other" ? 'justify-center' : 'items-center gap-5'
-                                } cursor-pointer font-semibold px-6 text-center text-[18px] p-4 rounded-2xl ${selected === index ? 'bg-primary1 text-white' : 'bg-primary7'
+                                } cursor-pointer font-semibold px-6 text-center text-[18px] p-4 rounded-2xl bg-primary1 text-white
                                 }`}
                         >
                             {/* Show image only if flag exists */}

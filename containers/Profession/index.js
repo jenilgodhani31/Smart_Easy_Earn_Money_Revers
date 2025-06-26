@@ -7,15 +7,10 @@ import { toast } from 'react-toastify';
 
 
 function Profession() {
-    const [selected, setSelected] = useState(null);
     const router = useRouter()
 
-    function handleClick() {
-        if (selected === null) {
-            toast.error("Please select Profession");
-        } else {
+    function handleClick() {    
             router.push('/availability');
-        }
     }
     return (
         <Layout title={"Profession"} className={"text-[15px]"}>
@@ -26,15 +21,15 @@ function Profession() {
                     data-full-width-responsive="true"
                 />
             </div>
-            <div className="flex flex-col gap-5 mx-auto h-max  p-4  pb-[300px]">
+            <div className="flex flex-col gap-5 mx-auto h-max  p-4  h-screen">
 
 
                 <div className='grid grid-cols-1 gap-4'>
                     {gameData?.Profession?.map((item, index) => (
                         <div
                             key={index}
-                            onClick={() => setSelected(index)}
-                            className={`cursor-pointer font-semibold  text-center text-[18px] p-4 rounded-2xl ${selected === index ? 'bg-primary1 text-white' : 'bg-primary7'
+                            onClick={handleClick}
+                            className={`cursor-pointer font-semibold  text-center text-[18px] p-4 rounded-2xl bg-primary1 text-white
                                 }`}
                         >
                             {item.name}
